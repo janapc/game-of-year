@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "d3db5464-9966-47fc-8fa3-56400ff60bdc",
+		"name": "games-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get game by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"The Legend of Zelda: Breath of the Wild 3\",\n\t\"description\": \"É um jogo eletrônico de ação-aventura desenvolvido pela Nintendo Entertainment Planning & Development e publicado pela Nintendo.\",\n\t\"cover\":\"https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/games",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update game",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"name\": \"God of War: Ragnarok\",\n\t\"description\": \"Jogo do Deus da Guerra\",\n\t\"cover\":\"https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/games/1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update game vote",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games/4/vote",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"4",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search games by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games/search?name=Of",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Of"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top rated game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games/winner",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"winner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete game",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/games/4",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"games",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080/api",
+			"type": "default"
+		}
+	]
+}
